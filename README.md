@@ -1,7 +1,6 @@
 jannie-5
 ========
-
-Arm driven drone, for VII Piweek
+Arduino Yun driven drone, for VII Piweek
 
 Requirements:
 - arduino yún
