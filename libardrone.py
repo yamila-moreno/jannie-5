@@ -169,7 +169,7 @@ class ARDrone(object):
         self.ipc_thread.stop()
         self.ipc_thread.join()
         self.lock.release()
-        
+
     def move(self,lr, fb, vv, va):
         """Makes the drone move (translate/rotate).
 
@@ -178,7 +178,7 @@ class ARDrone(object):
 	   rb -- front-back tilt: float [-1..1] negative: forwards, positive:
         	backwards
 	   vv -- vertical speed: float [-1..1] negative: go down, positive: rise
-	   va -- angular speed: float [-1..1] negative: spin left, positive: spin 
+	   va -- angular speed: float [-1..1] negative: spin left, positive: spin
         	right"""
         self.at(at_pcmd, True, lr, fb, vv, va)
 
@@ -215,7 +215,7 @@ def at_pcmd(seq, progressive, lr, fb, vv, va):
     rb -- front-back tilt: float [-1..1] negative: forwards, positive:
         backwards
     vv -- vertical speed: float [-1..1] negative: go down, positive: rise
-    va -- angular speed: float [-1..1] negative: spin left, positive: spin 
+    va -- angular speed: float [-1..1] negative: spin left, positive: spin
         right
 
     The above float values are a percentage of the maximum speed.
@@ -399,7 +399,7 @@ if __name__ == "__main__":
     import termios
     import fcntl
     import os
-    
+
     fd = sys.stdin.fileno()
 
     oldterm = termios.tcgetattr(fd)
