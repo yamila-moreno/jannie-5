@@ -55,7 +55,7 @@ class ARDrone(object):
     def takeoff(self):
         """Make the drone takeoff."""
         self.at(at_ftrim)
-        self.at(at_config, "control:altitude_max", "20000")
+        self.at(at_config, "control:altitude_max", "1000")
         self.at(at_ref, True)
 
     def land(self):
