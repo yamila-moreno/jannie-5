@@ -19,3 +19,7 @@ Process
 - in the linux side, we have a bottle server (APIlike app to be called from arduino)
 - with an init.d script to start at Yun boot
 - this bottle server connects to the libardrone library to send UDP messages to the drone
+
+Note::
+
+    every command starts and doesn't end if no other command is recieved. For instance, if you send "go up" comand, it will raise until changing the vertical speed; so, you would need to go_vertical(1) (means go up at speed 1) and then go_vertical(0) to stop raising.
