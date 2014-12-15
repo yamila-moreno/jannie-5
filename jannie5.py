@@ -1,22 +1,26 @@
 # -*- coding: utf-8 -*-
 
-import ardrone_server as ar
 from time import sleep
+import subprocess
+
+def invoke_rest_api(cmd):
+    url = 'http://localhost:8080/{}'.format(cmd)
+    subprocess.call(['curl', url])
 
 if __name__ == "__main__":
     # start
-    ar.start()
-    ar.takeoff()
+    invoke_rest_api('start')
+    invoke_rest_api('takeoff')
     sleep(5)
     # go forward
-    ar.go_forward()
+    invoke_rest_api('go_forward')
     sleep(2)
-    ar.hover()
+    invoke_rest_api('hover')
     sleep(5)
     # go backward
-    ar.go_backward()
+    invoke_rest_api('go_backward')
     sleep(2)
-    ar.hover()
+    invoke_rest_api('hover')
     # land
-    ar.land()
-    ar.stop()
+    invoke_rest_api('land')
+    invoke_rest_api('stop')
