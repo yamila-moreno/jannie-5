@@ -1,24 +1,24 @@
 jannie-5
 ========
-Arduino Yun driven drone, for VII Piweek
+Arduino Yún driven drone, for VII Piweek
 
 Requirements:
-- arduino yún
-- python2.7
-- virtualenv
-- bottle
-- parrot ardrone
+- Arduino yún
+- Python2.7
+- Virtualenv
+- Bottle
+- Parrot ardrone
 
 
 Process
 =======
 (this is not a proper documentation, only notes during the process)
 
-- arduino is connected to sensors
-- using the Process.h library arduino can invoke commands in linux
-- in the linux side, we have a bottle server (APIlike app to be called from arduino)
-- with an init.d script to start at Yun boot
-- this bottle server connects to the libardrone library to send UDP messages to the drone
+- Arduino is connected to sensors
+- Using the Process.h library arduino can invoke commands in linux
+- On the linux side, we have a bottle server (API-like app to be called from arduino)
+- With an init.d script to start at Yun boot
+- This bottle server connects to the libardrone library to send UDP messages to the drone
 
 Note::
 
