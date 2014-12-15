@@ -11,7 +11,7 @@ if __name__ == "__main__":
         while 1:
             try:
                 print('Enter a single char')
-                cmd = sys.stdin.read(1)
+                c = sys.stdin.read(1)
                 c = c.lower()
 
                 if c == 't':
