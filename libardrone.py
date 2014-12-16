@@ -46,7 +46,6 @@ class ARDrone(object):
         self.com_watchdog_timer = threading.Timer(self.timer_t, self.commwdg)
         self.lock = threading.Lock()
         self.speed = 0.2
-        self.at(at_config, "general:navdata_demo", "TRUE")
 
     def takeoff(self):
         """Make the drone takeoff."""
