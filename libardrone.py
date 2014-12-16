@@ -31,10 +31,6 @@ import struct
 import threading
 
 
-
-__author__ = "Bastian Venthur"
-
-
 ARDRONE_COMMAND_PORT = 5556
 
 
