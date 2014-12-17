@@ -12,7 +12,7 @@ def start():
     global drone
     drone = libardrone.ARDrone()
 
-@route('/takeoff')
+@route('/take/off')
 def takeoff():
     drone.takeoff()
     drone.hover()

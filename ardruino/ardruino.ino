@@ -45,8 +45,8 @@ void loop()
         {
             Serial.println("Take care, we are taking off");
             Serial.println("****************************");
-            //sendDroneAction("start");
-            //sendDroneAction("takeoff");
+            sendDroneAction("start");
+            sendDroneAction("take/off");
             droneStarted = true;
         }
         else
