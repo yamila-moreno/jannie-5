@@ -21,6 +21,10 @@ def takeoff():
 def land():
     drone.land()
 
+@route('/stop')
+def stop():
+    drone.halt()
+
 @route('/hover')
 def hover():
     drone.hover()
@@ -42,10 +46,6 @@ def slow_down():
     if speed > 0:
         speed -= 0.1
     drone.set_speed(speed)
-
-@route('/stop')
-def stop():
-    drone.halt()
 
 @route('/go/left')
 def go_left():
