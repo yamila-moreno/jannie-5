@@ -46,16 +46,17 @@ void loop()
             Serial.println("Take care, we are taking off");
             Serial.println("****************************");
             sendDroneAction("start");
-            sendDroneAction("take/off");
+            sendDroneAction("takeoff");
             droneStarted = true;
         }
         else
         {
             Serial.println("Fasten your belt, we are landing");
             Serial.println("********************************");
-            //sendDroneAction("land");
-            //sendDroneAction("stop");
+            sendDroneAction("land");
+            sendDroneAction("stop");
             droneStarted = false;
+            delay(5000);
         }
     }
     else
@@ -69,12 +70,6 @@ void loop()
             if(degreesValue > 100)
             {
                 accel.read();
-                //Serial.print("accelerationValues: ");
-                //Serial.print(accel.x);
-                //Serial.print(" / ");
-                //Serial.print(accel.y);
-                //Serial.print(" / ");
-                //Serial.println(accel.z);
                 Serial.print("calculatedValues: ");
                 Serial.print(accel.cx);
                 Serial.print(" / ");
@@ -84,38 +79,37 @@ void loop()
                 if(accel.cx < -0.75)
                 {
                     Serial.println("Adelante");
-                    //sendDroneAction("go/forward");
+                    sendDroneAction("go_forward");
                 }
                 else if(accel.cx > 0.75)
                 {
                     Serial.println("Atrás");
-                    //sendDroneAction("go/backward");
+                    sendDroneAction("go_backward");
                 }
                 else if(accel.cy > 0.75)
                 {
                     Serial.println("Izquierda");
-                    //sendDroneAction("go/left");
+                    sendDroneAction("go_left");
 
                 }
                 else if(accel.cy < -0.75)
                 {
                     Serial.println("Derecha");
-                    //sendDroneAction("go/right");
+                    sendDroneAction("go_right");
                 }
                 else
                 {
                     Serial.println("Hover");
-                    //sendDroneAction("hover");
+                    sendDroneAction("hover");
                 }
 
             }
             else
             {
                 Serial.println("Order hover");
-                //sendDroneAction("hover");
-                delay(500);
+                sendDroneAction("hover");
             }
         }
     }
-    delay(1000);
+    delay(500);
 }
