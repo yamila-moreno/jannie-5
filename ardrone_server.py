@@ -9,7 +9,7 @@ def start():
     global drone
     drone = libardrone.ARDrone()
 
-@route('/take/off')
+@route('/takeoff')
 def takeoff():
     drone.takeoff()
     drone.hover()
@@ -37,42 +37,42 @@ def accelerate():
         speed += 0.1
     drone.set_speed(speed)
 
-@route('/slow/down')
+@route('/slow_down')
 def slow_down():
     global speed
     if speed > 0:
         speed -= 0.1
     drone.set_speed(speed)
 
-@route('/go/left')
+@route('/go_left')
 def go_left():
     drone.move_left()
 
-@route('/go/right')
+@route('/go_right')
 def go_right():
     drone.move_right()
 
-@route('/go/up')
+@route('/go_up')
 def go_up():
     drone.move_up()
 
-@route('/go/down')
+@route('/go_down')
 def go_down():
     drone.move_down()
 
-@route('/go/forward')
+@route('/go_forward')
 def go_forward():
     drone.move_forward()
 
-@route('/go/backward')
+@route('/go_backward')
 def go_backward():
     drone.move_backward()
 
-@route('/spin/left')
+@route('/spin_left')
 def spin_left():
     drone.turn_left()
 
-@route('/spin/right')
+@route('/spin_right')
 def spin_right():
     drone.turn_right()
 
