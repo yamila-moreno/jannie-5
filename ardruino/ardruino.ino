@@ -26,11 +26,11 @@ void sendDroneAction(String action)
 
 void setup()
 {
+    Serial.begin(9600);
     Serial.println("Initializing accelerometer: ");
     accel.init(); // Default init: +/-2g and 800Hz ODR
     Serial.println("Done!");
     Bridge.begin();
-    Serial.begin(9600);
 }
 
 void loop()
@@ -52,7 +52,7 @@ void loop()
         else
         {
             Serial.println("Fasten your belt, we are landing");
-            Serial.println("****************************");
+            Serial.println("********************************");
             //sendDroneAction("land");
             //sendDroneAction("stop");
             droneStarted = false;
@@ -66,11 +66,8 @@ void loop()
             degreesValue = map(flexiValue, 250, 200, 0, 90); //from 0 to 90
             Serial.print("flexed degreesValue: ");
             Serial.println(degreesValue);
-            delay(500);
             if(degreesValue > 100)
             {
-                Serial.println("Reading accelerometer: ");
-
                 accel.read();
                 //Serial.print("accelerationValues: ");
                 //Serial.print(accel.x);
@@ -84,12 +81,39 @@ void loop()
                 Serial.print(accel.cy);
                 Serial.print(" / ");
                 Serial.println(accel.cz);
+                if(accel.cx < -0.75)
+                {
+                    Serial.println("Adelante");
+                    //sendDroneAction("go/forward");
+                }
+                else if(accel.cx > 0.75)
+                {
+                    Serial.println("Atrás");
+                    //sendDroneAction("go/backward");
+                }
+                else if(accel.cy > 0.75)
+                {
+                    Serial.println("Derecha");
+                    //sendDroneAction("go/right");
+
+                }
+                else if(accel.cy < -0.75)
+                {
+                    Serial.println("Izquierda");
+                    //sendDroneAction("go/left");
+                }
+                else
+                {
+                    Serial.println("Hover");
+                    //sendDroneAction("hover");
+                }
+
             }
             else
             {
                 Serial.println("Order hover");
-                delay(1000);
                 //sendDroneAction("hover");
+                delay(500);
             }
         }
     }
