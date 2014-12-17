@@ -93,14 +93,14 @@ void loop()
                 }
                 else if(accel.cy > 0.75)
                 {
-                    Serial.println("Derecha");
-                    //sendDroneAction("go/right");
+                    Serial.println("Izquierda");
+                    //sendDroneAction("go/left");
 
                 }
                 else if(accel.cy < -0.75)
                 {
-                    Serial.println("Izquierda");
-                    //sendDroneAction("go/left");
+                    Serial.println("Derecha");
+                    //sendDroneAction("go/right");
                 }
                 else
                 {
