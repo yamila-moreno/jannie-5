@@ -44,12 +44,13 @@ class ARDrone(object):
         self.timer_t = 0.2
         self.com_watchdog_timer = threading.Timer(self.timer_t, self.commwdg)
         self.lock = threading.Lock()
-        self.speed = 0.2
+        self.speed = 0.05
+        self.at(at_config, "general:navdata_demo", "TRUE")
 
     def takeoff(self):
         """Make the drone takeoff."""
         self.at(at_ftrim)
-        self.at(at_config, "control:altitude_max", "1000")
+        self.at(at_config, "control:altitude_max", "2000")
         self.at(at_ref, True)
 
     def land(self):

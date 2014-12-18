@@ -1,5 +1,6 @@
 from bottle import route, run
 import libardrone
+from time import sleep
 
 drone = None
 speed = 0.1
@@ -17,6 +18,7 @@ def takeoff():
 @route('/land')
 def land():
     drone.land()
+    sleep(4)
 
 @route('/stop')
 def stop():
