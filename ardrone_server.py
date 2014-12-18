@@ -1,11 +1,8 @@
-from bottle import route, run, template
+from bottle import route, run
 import libardrone
 
 drone = None
 speed = 0.1
-
-#TODO: review ARDrone.move() method
-# maybe is useful a decorator instead of the condition
 
 @route('/start')
 def start():
