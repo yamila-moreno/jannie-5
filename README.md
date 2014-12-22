@@ -56,6 +56,6 @@ Software installation
    ```
 8. If everything works, hold the glove and try to fly the ARDrone with it. Hints:
        - Push the Force Sensitive Resistor to take off / land
-       - Flex the Flex Sensor in order to enable the acceleromter control. Release it inder to hover.
-       - Tilt the Acceleromter in otder to move the drone in the horizontal plane
+       - Flex the Flex Sensor to enable the Accelerometer control. Release it to hover.
+       - Tilt the Accelerometer to move the drone in the horizontal plane
 9. Enjoy :-)
