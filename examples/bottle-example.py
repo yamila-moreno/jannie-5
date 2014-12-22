@@ -22,17 +22,6 @@ def with_api():
     invoke_rest_api('land')
     invoke_rest_api('stop')
 
-def with_lib():
-    import libardrone
-    d = libardrone.ARDrone()
-    d.takeoff()
-    d.hover()
-    sleep(5)
-    d.move_forward()
-    sleep(3)
-    d.land()
-    d.halt()
-    
+
 if __name__ == "__main__":
     with_api()
-    #with_lib()
