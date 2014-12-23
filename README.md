@@ -1,6 +1,6 @@
 jannie-5
 ========
-Sensor-armed glove driven drone, for VII Piweek.
+Sensor-armed glove driven drone, for VII Piweek. You can read more and watch a video [here](http://moduslaborandi.net/vii-piweek-jannie-5/).
 
 This integration uses a slightly trimmed version of (https://github.com/venthur/python-ardrone)
 
@@ -26,6 +26,7 @@ The sensors are meant to be sewed into the glove: for example, the Accelerometer
 
 Software installation
 ---------------------
+
 1. Clone this repo in order to retrieve the latest version of the files
 2. Compile and upload the sketch `Ardruino.ino` to the Yún. You will need Arduino IDE 1.5.8+ and the [SFEMMA8452Q library](https://github.com/sparkfun/MMA8452_Accelerometer/tree/master/Firmware/libraries/SFE_MMA8452Q)
 3. Copy the `src` folder to the `/root` folder of the Yún's Linino and install the python dependencies:
@@ -58,4 +59,5 @@ Software installation
        - Push the Force Sensitive Resistor to take off / land
        - Flex the Flex Sensor to enable the Accelerometer control. Release it to hover.
        - Tilt the Accelerometer to move the drone in the horizontal plane
+
 9. Enjoy :-)
