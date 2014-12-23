@@ -1,8 +1,8 @@
 jannie-5
 ========
-Sensor-armed glove driven drone, for VII Piweek. You can read more and watch a video [here](http://moduslaborandi.net/vii-piweek-jannie-5/).
+Sensor-armed glove driven drone, for VII Piweek. More information, pics & videos [here](http://moduslaborandi.net/vii-piweek-jannie-5/).
 
-This integration uses a slightly trimmed version of (https://github.com/venthur/python-ardrone)
+This integration uses a slightly trimmed version of [python-ardrone](https://github.com/venthur/python-ardrone).
 
 Hardware installation
 ---------------------
